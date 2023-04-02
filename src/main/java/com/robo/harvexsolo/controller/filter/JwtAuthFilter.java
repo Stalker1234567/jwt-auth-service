@@ -29,7 +29,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     private final JwtServiceImpl jwtService;
     private final JwtValidatorImpl jwtValidator;
     private final UserRepository userRepository;
-    private final String BEARER_PREFFIX = "BEARER:";
+    private final String BEARER_PREFFIX = "Bearer:";
 
 
     public UserDetailsService userDetailsService() {

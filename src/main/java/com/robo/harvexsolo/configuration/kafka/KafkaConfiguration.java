@@ -1,4 +1,4 @@
-package com.robo.harvexsolo.configuration;
+package com.robo.harvexsolo.configuration.kafka;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;

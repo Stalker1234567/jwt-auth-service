@@ -1,4 +1,4 @@
-package com.robo.harvexsolo.configuration;
+package com.robo.harvexsolo.configuration.kafka;
 
 import org.springframework.stereotype.Component;
 

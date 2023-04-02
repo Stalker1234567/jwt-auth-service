@@ -1,6 +1,6 @@
-package com.robo.harvexsolo.configuration.impl;
+package com.robo.harvexsolo.configuration.kafka.impl;
 
-import com.robo.harvexsolo.configuration.KafkaConfigurationProducerInterface;
+import com.robo.harvexsolo.configuration.kafka.KafkaConfigurationProducerInterface;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;

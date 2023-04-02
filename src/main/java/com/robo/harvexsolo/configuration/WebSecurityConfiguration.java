@@ -20,8 +20,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-// Configuration file Spring Security
-
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor

@@ -14,10 +14,15 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-    flyway:
+
+  kafka:
+    bootstrap-servers: localhost:8081
 
 
 access.token: 48404D635166546A576D5A7134743777217A25432A462D4A614E645267556B58
+
+
+
 #refresh.token: 48404D635166546A576D5A7134743777217A25432A462D4A614E645267556B58
 
 #jwt:

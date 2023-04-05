@@ -1,6 +1,7 @@
 package com.robo.harvexsolo.model;
 
 //import com.robo.harvexsolo.domain.RefreshToken;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,6 +41,9 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
 
     @Override
     public String getUsername() {

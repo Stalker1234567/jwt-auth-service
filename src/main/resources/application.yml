@@ -1,9 +1,26 @@
 spring:
+  security:
+    csrf:
+      enabled: true
+
   datasource:
     url: jdbc:postgresql://localhost:5432/test
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
+
+  mail:
+      host:
+      username:
+      password:
+      port: 587
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -14,10 +31,8 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-
   kafka:
     bootstrap-servers: localhost:8081
-
 
 access.token: 48404D635166546A576D5A7134743777217A25432A462D4A614E645267556B58
 

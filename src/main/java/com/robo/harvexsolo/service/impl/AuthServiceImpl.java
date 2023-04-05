@@ -57,4 +57,5 @@ public class AuthServiceImpl implements AuthServiceInterface {
         var JwtToken = jwtGenerated.generateAccessToken(user);
         return AuthResponseDto.builder().accessToken(JwtToken).build();
     }
+
 }

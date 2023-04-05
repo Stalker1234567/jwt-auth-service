@@ -2,6 +2,7 @@ package com.robo.harvexsolo.configuration;
 
 import com.robo.harvexsolo.controller.filter.JwtAuthFilter;
 import com.robo.harvexsolo.exception.UserNotFoundException;
+import com.robo.harvexsolo.model.Role;
 import com.robo.harvexsolo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 
 @Configuration
@@ -31,11 +33,13 @@ public class WebSecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                       .csrf().disable()
+                       .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**")
-                .permitAll()
-                      .anyRequest()
+                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/admin/**").hasRole(String.valueOf(Role.ADMIN))
+                .requestMatchers("/api/room/**").hasAnyRole(String.valueOf(Role.ADMIN), String.valueOf(Role.USER))
+                .anyRequest()
                       .authenticated()
                 .and()
                 .sessionManagement()
